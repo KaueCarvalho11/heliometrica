@@ -1,5 +1,5 @@
-# HELIOMÉTRICA: Sistema de Medição de Eficiêcia de Energia Solar
+# HELIOMÉTRICA: Sistema de Medição de Eficiência de Energia Solar
 
 ## Padrão de commit
 
-- <a href="https://medium.com/linkapi-solutions/conventional-commits-pattern-3778d1a1e657" rel="_external" target="_blank">Conventional Commits</a>
+- [Conventional Commits](https://medium.com/linkapi-solutions/conventional-commits-pattern-3778d1a1e657)

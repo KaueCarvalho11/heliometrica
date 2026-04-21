@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Usuário Visitante" as visitante
+actor "Usuário Autenticado" as autenticado
+
+visitante <|-- autenticado
+
+rectangle "HELIOMÉTRICA" {
+ usecase "Cadastrar Usuário" as UC08
+ usecase "Autenticar Usuário (Login)" as UC09
+ usecase "Cadastrar Especificações de Módulo Solar" as UC10
+ usecase "Gerenciar Histórico de Geração" as UC11
+ usecase "Salvar Histórico" as UC11a
+ usecase "Editar Histórico" as UC11b
+ usecase "Excluir Histórico" as UC11c
+}
+visitante --> UC08
+visitante --> UC09
+
+
+autenticado --> UC10
+autenticado --> UC11
+
+UC11 <.. UC11a: <<extend>>
+UC11 <.. UC11b: <<extend>>
+UC11 <.. UC11c: <<extend>>
+@enduml
+

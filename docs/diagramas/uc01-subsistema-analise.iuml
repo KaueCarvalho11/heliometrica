@@ -1,0 +1,28 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+actor "Usuário Autenticado" as usr
+actor "API de Clima" as api <<Sistema Externo>>
+rectangle "HELIOMÉTRICA" {
+ usecase "Visualizar Eficiência Energética" as UC02
+ usecase "Estimar Produção Energética" as UC03
+ usecase "Comparar Regiões" as UC04
+ usecase "Visualizar Histórico Meteorológico" as UC05
+ usecase "Buscar Dados Meteorológicos" as UC07
+ usecase "Buscar Região" as UC08
+ }
+
+usr --> UC08
+UC08 --> UC02
+UC08 --> UC03
+UC08 --> UC04 
+UC08 --> UC05
+UC02 ..> UC07 : <<include>>
+UC03 ..> UC07 : <<include>>
+UC05 ..> UC07 : <<include>>
+UC04 ..> UC07 : <<include>>
+UC07 <-- api
+
+@enduml
+

@@ -1,5 +1,7 @@
-# HELIOMÉTRICA: Sistema de Medição de Eficiência de Energia Solar
+# Heliométrica
 
-## Padrão de commit
+Sistema de apoio à medição e análise de eficiência de energia solar.
 
-- [Conventional Commits](https://medium.com/linkapi-solutions/conventional-commits-pattern-3778d1a1e657)
+## Convenções de commit
+
+Este projeto adota [Conventional Commits](https://www.conventionalcommits.org/).

@@ -1,0 +1,75 @@
+@startuml
+left to right direction
+
+class Usuario{
+    nome
+    email
+    senha
+    autenticar()
+    atualizar_cadastro()
+    gerenciar_historico()
+}
+
+class ModuloSolar{
+    modelo
+    potencia
+    eficiencia
+    area
+    fabricante
+    cadastrar_especificacoes()
+    editar_especificacoes()
+}
+
+class HistoricoGeracao{
+    lista_estimativas
+    data_atualizacao
+    salvar()
+    editar()
+    excluir()
+    listar()
+}
+
+class EstimativaEnergetica{
+    valor_estimado
+    data_calculo
+    eficiencia_calculada
+    grafico_resultado
+    calcular_estimativa()
+    gerar_grafico()
+}
+
+class Relatorio{
+    tipo_formato
+    data_exportacao
+    conteudo
+    exportar()
+}
+
+class Regiao{
+    nome
+    coordenadas
+    eficiencia_energetica
+    historico_meteorologico
+    buscar_dados()
+    visualizar_eficiencia()
+}
+
+class APIClima{
+    buscar_dados_meteorologicos()
+    retornar_indices()
+}
+
+' --- Relacionamentos organizados ---
+Usuario "1" -down- "1" HistoricoGeracao: possui >
+Usuario "1" -right- "0..*" ModuloSolar: cadastra >
+
+HistoricoGeracao "1" -down- "0..*" EstimativaEnergetica: armazena >
+ModuloSolar "1" -down- "1" EstimativaEnergetica: usado >
+
+EstimativaEnergetica "1" -down- "1" Regiao: utiliza >
+Relatorio "1" -left- "1..*" EstimativaEnergetica: exporta >
+
+Regiao -right-> APIClima: consulta >
+
+@enduml
+
